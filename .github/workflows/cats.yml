@@ -44,3 +44,6 @@ jobs:
         echo "Pause for 10 seconds to let container start"
         sleep 10
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+
+#aws ecr get-login-password --region us-east-1 | docker login -u AWS 229098891638.dkr.ecr.us-east-1.amazonaws.com --password-stdin 
