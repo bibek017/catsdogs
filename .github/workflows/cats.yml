@@ -34,7 +34,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: myecr_repo
-        IMAGE_TAG: cat_v1.1
+        IMAGE_TAG: cat_v0.1
       run: |
         cd cats
         ls -ltra
@@ -42,7 +42,7 @@ jobs:
         docker run -d -p 8080:80 --name catapps $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
-        sleep 9
+        sleep 10
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
 
